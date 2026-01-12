@@ -28,3 +28,5 @@
 - nitpick: Points out minor stylistic or formatting concerns.
 
 - design: Explain the reasoning behind your approach.
+
+- question: Ask about things you don't understand yet.

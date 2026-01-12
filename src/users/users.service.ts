@@ -1,9 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
+import { FindOneUser } from './dto/find-one-user.dto';
+import { UsersRepository } from './entities/UsersRepository';
 
 @Injectable()
 export class UsersService {
+    constructor(private usersRepository: UsersRepository) {}
+
     // create(createUserDto: CreateUserDto) {
     //   return 'This action adds a new user';
     // }
@@ -19,4 +23,13 @@ export class UsersService {
     // remove(id: number) {
     //   return `This action removes a #${id} user`;
     // }
+
+    findOne(id: number): FindOneUser | null {
+        // if (id === 0) {
+        //     const foundUser: FindOneUser = new FindOneUser();
+        //     return foundUser;
+        // }
+        // return null;
+        return this.usersRepository.findById(id);
+    }
 }
