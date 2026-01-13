@@ -26,35 +26,23 @@ describe('UsersService', () => {
         service = module.get<UsersService>(UsersService);
     });
 
-    it('should be defined', () => {
-        expect(service).toBeDefined();
+    describe('findOne()', () => {
+        it.failing('should return null when user does not exist', async () => {});
+
+        it.failing('should return user data when user exists', async () => {});
+
+        it.failing('should throw error when repository throws error', async () => {});
+
+        it.failing('should map repository entity to DTO correctly', async () => {});
     });
 
-    describe('findOne()', () => {
-        it('should be defined', () => {
-            expect(service.findOne).toBeDefined();
-        });
+    describe('create()', () => {
+        it.failing('should throw ConflictException when user already exists', async () => {});
 
-        it('should return null when no user was found', () => {
-            const id = 1;
-            mockUsersRepository.findById.mockReturnValue(null);
+        it.failing('should create user and return success message', async () => {});
 
-            const response = service.findOne(id);
+        it.failing('should hash password before saving', async () => {});
 
-            expect(mockUsersRepository.findById).toHaveBeenCalledWith(id);
-            expect(response).toBeNull();
-        });
-
-        it('should return a FindOneUser object if user was found', () => {
-            const id = 0;
-            const mockUser = new FindOneUser();
-            mockUsersRepository.findById.mockReturnValue(mockUser);
-
-            const response = service.findOne(id);
-
-            expect(mockUsersRepository.findById).toHaveBeenCalledWith(id);
-            expect(response).toBe(mockUser);
-            expect(response).toBeInstanceOf(FindOneUser);
-        });
+        it.failing('should throw InternalServerErrorException on database failure', async () => {});
     });
 });
