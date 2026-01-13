@@ -53,7 +53,7 @@ describe('UsersService', () => {
             const response = service.findOne(id);
 
             expect(mockUsersRepository.findById).toHaveBeenCalledWith(id);
-            expect(response).not.toBeNull();
+            expect(response).toBe(mockUser);
             expect(response).toBeInstanceOf(FindOneUser);
         });
     });

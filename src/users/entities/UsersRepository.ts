@@ -2,9 +2,9 @@ import { Injectable } from '@nestjs/common';
 import { FindOneUser } from '../dto/find-one-user.dto';
 
 // design: this file will be deleted and replaced by the database when implemented.
+// design: no test should be performed because this file is temporary.
 @Injectable()
 export class UsersRepository {
-    // deisgn: in-memory storage
     private users: FindOneUser[] = [];
 
     findById(id: number): FindOneUser | null {
@@ -14,7 +14,3 @@ export class UsersRepository {
         return null;
     }
 }
-
-// save(user: FindOneUser): void {
-//     this.users.push(user);
-// }
