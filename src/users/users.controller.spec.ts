@@ -59,14 +59,24 @@ describe('UsersController', () => {
     });
 
     describe('create()', () => {
-        it.todo('should be defined');
+        it.failing('should return 201 and success message when user is created', async () => {
+            // Mock service to return success
+            // Assert status code and response structure
+        });
 
-        // suggestion: in the future, replace the returned string by custom Error or API response instead.
-        //todo: replace with proper API reponse.
-        it.todo('should return a negative string when user already exist');
+        it.failing('should return 409 when user already exists', async () => {
+            // Mock service to throw/return conflict error
+            // Assert status code and error message
+        });
 
-        // suggestion: in the future, replace the returned string by custom Error or API response instead.
-        //todo: replace with proper API reponse.
-        it.todo('should return a negative string when user already exist');
+        it.failing('should return 400 when validation fails', async () => {
+            // Mock service to throw/return validation error
+            // Assert status code and error message
+        });
+
+        it.failing('should return 500 when unexpected error occurs', async () => {
+            // Mock service to throw unexpected error
+            // Assert status code and error handling
+        });
     });
 });
