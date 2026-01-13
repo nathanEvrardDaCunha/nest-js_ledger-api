@@ -34,6 +34,7 @@ describe('UsersController', () => {
             expect(controller.findOne).toBeDefined();
         });
 
+        // suggestion: in the future, replace the returned string by custom Error or API response instead.
         it('should return a negative string when user was not found', () => {
             mockUsersService.findOne.mockReturnValue(null);
 
@@ -44,6 +45,7 @@ describe('UsersController', () => {
             expect(result).toBe('missing user.');
         });
 
+        // suggestion: in the future, replace the returned string by custom Error or API response instead.
         it('should return a affirmative string when user is found', () => {
             const mockUser = new FindOneUser();
             mockUsersService.findOne.mockReturnValue(mockUser);
@@ -54,5 +56,17 @@ describe('UsersController', () => {
             //todo: replace with proper API reponse.
             expect(result).toBe('user found !');
         });
+    });
+
+    describe('create()', () => {
+        it.todo('should be defined');
+
+        // suggestion: in the future, replace the returned string by custom Error or API response instead.
+        //todo: replace with proper API reponse.
+        it.todo('should return a negative string when user already exist');
+
+        // suggestion: in the future, replace the returned string by custom Error or API response instead.
+        //todo: replace with proper API reponse.
+        it.todo('should return a negative string when user already exist');
     });
 });
