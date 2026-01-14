@@ -30,3 +30,16 @@
 - design: Explain the reasoning behind your approach.
 
 - question: Ask about things you don't understand yet.
+
+## Tests
+
+Test should be organized, when talking in category of HTTP Error, in the following, decreasing order:
+- 500 Status Code (599 to 500)
+- 400 Status Code (499 to 400)
+- 300 Status Code (399 to 300)
+- 200 Status Code (299 to 200)
+- 100 Status Code (199 to 100)
+
+All test follow: "should [verb] [result] when [condition]".
+
+Services should return data, not success message.
