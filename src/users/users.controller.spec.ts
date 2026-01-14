@@ -30,50 +30,50 @@ describe('UsersController', () => {
     });
 
     describe('create()', () => {
-        it.failing('should return 500 when unexpected error occurs', async () => {});
+        it.todo('should return 500 when unexpected error occurs');
 
-        it.failing('should return 409 when user already exists', async () => {});
+        it.todo('should return 409 when user already exists');
 
-        it.failing('should return 400 when validation fails', async () => {});
+        it.todo('should return 400 when validation fails');
 
-        it.failing('should return 201 when user is created', async () => {});
+        it.todo('should return 201 when user is created');
     });
 
     describe('findOne()', () => {
-        it.failing('should return 500 when service throws unexpected error', async () => {});
+        it.todo('should return 500 when service throws unexpected error');
 
-        it.failing('should return 404 when user is not found', async () => {});
+        it.todo('should return 404 when user is not found');
 
-        it.failing('should return 400 when ID is invalid', async () => {});
+        it.todo('should return 400 when ID is invalid');
 
-        it.failing('should return 200 when user is found', async () => {});
+        it.todo('should return 200 when user is found');
     });
 
     describe('findAll()', () => {
-        it.failing('should return 500 when service throws unexpected error', async () => {});
+        it.todo('should return 500 when service throws unexpected error');
 
-        it.failing('should return 404 when no users are found', async () => {});
+        it.todo('should return 404 when no users are found');
 
-        it.failing('should return 200 when users are found', async () => {});
+        it.todo('should return 200 when users are found');
     });
 
     describe('update()', () => {
-        it.failing('should return 500 when unexpected error occurs', async () => {});
+        it.todo('should return 500 when unexpected error occurs');
 
-        it.failing('should return 422 when validation fails', async () => {});
+        it.todo('should return 422 when validation fails');
 
-        it.failing('should return 404 when user is not found', async () => {});
+        it.todo('should return 404 when user is not found');
 
-        it.failing('should return 200 when user is updated', async () => {});
+        it.todo('should return 200 when user is updated');
     });
 
     describe('delete()', () => {
-        it.failing('should return 500 when unexpected error occurs', async () => {});
+        it.todo('should return 500 when unexpected error occurs');
 
-        it.failing('should return 404 when user is not found', async () => {});
+        it.todo('should return 404 when user is not found');
 
-        it.failing('should return 400 when ID is invalid', async () => {});
+        it.todo('should return 400 when ID is invalid');
 
-        it.failing('should return 204 when user is deleted', async () => {});
+        it.todo('should return 204 when user is deleted');
     });
 });

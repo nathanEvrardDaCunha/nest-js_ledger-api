@@ -2,6 +2,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { UsersService } from './users.service';
 import { FindOneUser } from './dto/find-one-user.dto';
 import { UsersRepository } from './entities/UsersRepository';
+import { InternalServerErrorException } from '@nestjs/common';
 
 describe('UsersService', () => {
     let service: UsersService;
@@ -11,7 +12,7 @@ describe('UsersService', () => {
         mockUsersRepository = {
             findById: jest.fn(),
             findAll: jest.fn(),
-            save: jest.fn(),
+            create: jest.fn(),
             update: jest.fn(),
             delete: jest.fn(),
         } as jest.Mocked<Partial<UsersRepository>> as jest.Mocked<UsersRepository>;
@@ -30,58 +31,58 @@ describe('UsersService', () => {
     });
 
     describe('create()', () => {
-        it.failing('should throw InternalServerErrorException on database failure', async () => {});
+        it.todo('should throw InternalServerErrorException on database failure');
 
-        it.failing('should throw ConflictException when user already exists', async () => {});
+        it.todo('should throw ConflictException when user already exists');
 
-        it.failing('should throw BadRequestException when creation data is invalid', async () => {});
+        it.todo('should hash password before saving');
 
-        it.failing('should hash password before saving', async () => {});
-
-        it.failing('should create user and return user data', async () => {});
+        it.todo('should create user and return user data');
     });
 
     describe('findOne()', () => {
-        it.failing('should throw InternalServerErrorException on database failure', async () => {});
+        it.todo('should throw InternalServerErrorException on database failure');
 
-        it.failing('should throw NotFoundException when user is not found', async () => {});
+        it.todo('should throw NotFoundException when user is not found');
 
-        it.failing('should throw BadRequestException when user ID is invalid', async () => {});
+        it.todo('should throw BadRequestException when user ID is invalid');
 
-        it.failing('should exclude sensitive fields from returned data', async () => {});
+        it.todo('should exclude sensitive fields from returned data');
 
-        it.failing('should return user data when user is found', async () => {});
+        it.todo('should return user data when user is found');
     });
 
     describe('findAll()', () => {
-        it.failing('should throw InternalServerErrorException on database failure', async () => {});
+        it.todo('should throw InternalServerErrorException on database failure');
 
-        it.failing('should exclude sensitive fields from returned data', async () => {});
+        it.todo('should exclude sensitive fields from returned data');
 
-        it.failing('should return empty array when no users exist', async () => {});
+        it.todo('should return empty array when no users exist');
 
-        it.failing('should return users data when users are found', async () => {});
+        it.todo('should return users data when users are found');
     });
 
     describe('update()', () => {
-        it.failing('should throw InternalServerErrorException on database failure', async () => {});
+        it.todo('should throw InternalServerErrorException on database failure');
 
-        it.failing('should throw NotFoundException when user is not found', async () => {});
+        it.todo('should throw NotFoundException when user is not found');
 
-        it.failing('should throw BadRequestException when update data is invalid', async () => {});
+        it.todo('should throw BadRequestException when update data is invalid');
 
-        it.failing('should hash password if password is being updated', async () => {});
+        it.todo('should hash password if password is being updated');
 
-        it.failing('should update user and return updated user data', async () => {});
+        it.todo('should not update immutable fields');
+
+        it.todo('should update user and return updated user data');
     });
 
     describe('delete()', () => {
-        it.failing('should throw InternalServerErrorException on database failure', async () => {});
+        it.todo('should throw InternalServerErrorException on database failure');
 
-        it.failing('should throw NotFoundException when user is not found', async () => {});
+        it.todo('should throw NotFoundException when user is not found');
 
-        it.failing('should throw BadRequestException when ID is invalid', async () => {});
+        it.todo('should throw BadRequestException when ID is invalid');
 
-        it.failing('should delete user and return void', async () => {});
+        it.todo('should delete user and return void');
     });
 });
