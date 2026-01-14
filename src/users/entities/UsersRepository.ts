@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { FindOneUser } from '../dto/find-one-user.dto';
 
 // design: this file will be deleted and replaced by the database when implemented.
@@ -12,5 +12,9 @@ export class UsersRepository {
             return this.users[id];
         }
         return null;
+    }
+
+    async create(): Promise<never> {
+        throw new InternalServerErrorException();
     }
 }

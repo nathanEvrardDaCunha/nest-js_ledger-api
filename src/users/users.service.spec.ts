@@ -31,7 +31,17 @@ describe('UsersService', () => {
     });
 
     describe('create()', () => {
-        it.todo('should throw InternalServerErrorException on database failure');
+        // question: where do I validate the Body data ?
+
+        it('should throw InternalServerErrorException on database failure', async () => {
+            mockUsersRepository.create.mockRejectedValue(
+                new InternalServerErrorException('Database connection failed !'),
+            );
+
+            let result = service.create();
+
+            await expect(result).rejects.toThrow('Database connection failed !');
+        });
 
         it.todo('should throw ConflictException when user already exists');
 

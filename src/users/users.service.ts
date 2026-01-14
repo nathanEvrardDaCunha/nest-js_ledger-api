@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { FindOneUser } from './dto/find-one-user.dto';
 import { UsersRepository } from './entities/UsersRepository';
 
@@ -12,5 +12,15 @@ export class UsersService {
             return user;
         }
         return null;
+    }
+
+    async create() {
+        try {
+            return await this.usersRepository.create();
+        } catch (error) {
+            // console.error('Database error:', error);
+            // suggestion: handle the error graacefully.
+            throw error;
+        }
     }
 }
