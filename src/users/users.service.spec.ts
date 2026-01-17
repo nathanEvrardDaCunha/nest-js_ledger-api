@@ -3,6 +3,7 @@ import { UsersService } from './users.service';
 import { FindOneUser } from './dto/find-one-user.dto';
 import { UsersRepository } from './entities/UsersRepository';
 import { InternalServerErrorException } from '@nestjs/common';
+import { CreateUserDto } from './dto/create-user.dto';
 
 describe('UsersService', () => {
     let service: UsersService;
@@ -30,9 +31,8 @@ describe('UsersService', () => {
         service = module.get<UsersService>(UsersService);
     });
 
+    // question: where do I validate the Body data ?
     describe('create()', () => {
-        // question: where do I validate the Body data ?
-
         it('should throw InternalServerErrorException on database failure', async () => {
             mockUsersRepository.create.mockRejectedValue(
                 new InternalServerErrorException('Database connection failed !'),
@@ -47,7 +47,20 @@ describe('UsersService', () => {
 
         it.todo('should hash password before saving');
 
-        it.todo('should create user and return user data');
+        it('should create user and return user data', async () => {
+            const mockUser = {
+                firstname: 'Nathan',
+                lastname: 'EVRARD',
+                email: 'nathan.evrard@gmail.com',
+                password: 'Azerty11!',
+            } satisfies CreateUserDto;
+            mockUsersRepository.create.mockReturnValue(Promise<mockUser>);
+
+            let result = service.create();
+            // Check user has been pushed to array
+
+            expect(result).toBe(mockUser);
+        });
     });
 
     describe('findOne()', () => {
